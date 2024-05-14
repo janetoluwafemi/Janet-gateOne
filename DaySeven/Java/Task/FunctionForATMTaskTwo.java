@@ -31,8 +31,8 @@ import java.util.ArrayList;
 			System.out.print("How much do you want to deposit: ");
 			double depositAmount = scanner.nextDouble();
 			for(int counter = 0; counter < accountNumber; counter++){
-				if(accountNumber .equals(accountNumber.get(counter)){ 	
-					double balance.set(counter,depositAmount + balance.get(counter));
+				if(accountNumber .equals(accountNumber.get(counter))){ 	
+					balance.set(counter,depositAmount + balance.get(counter));
 				}
 			}
 			
@@ -44,8 +44,8 @@ import java.util.ArrayList;
 			System.out.print("How much do you want to withdraw: ");
 			double amountWithdrawn = scanner.nextDouble;
 			for(int counter = 0; counter < accountNumber; counter++){
-				if(accountNumber .equals(accountNumber.get(counter)){ 
-					double balance.set(counter,amountBalance.get(counter) - amountWithdrawn);
+				if(accountNumber .equals(accountNumber.get(counter))){ 
+					balance.set(counter,amountBalance.get(counter) - amountWithdrawn);
 				}
 			}
 		}
@@ -53,22 +53,22 @@ import java.util.ArrayList;
 			System.out.print("Enter your account number: ");
 			String accountNo = scanner.next();
 			for(int counter = 0; counter < accountNumber; counter++){
-				if(accountNo .equals(accountNumber.get(counter)){ 
+				if(accountNo .equals(accountNumber.get(counter))){ 
 					System.out.print(firstName.get(counter));
 					System.out.print(lastName.get(counter));
 					System.out.print(accaountNo.get(counter));
 					System.out.print(balance.get(counter));
 				}
 			}
-		
+		}
 		public void pin(){
 			System.out.print("Enter your account number:");
 			String account = scanner.next();
 			System.out.print("Enter your old pin: ");
 			String oldPin = scanner.next();
 			for(int counter = 0; counter < account.size; counter++){
-				if(account .equals(account.get(counter) && oldPin.equals(pin.get(counter)){
-					System.out.print("Enter new pin:"){
+				if(account .equals(account.get(counter)) && oldPin.equals(pin.get(counter))){
+					System.out.print("Enter new pin:");
 					pin .set(scanner.next());
 		
 				}
@@ -83,14 +83,14 @@ import java.util.ArrayList;
 			System.out.print("Enter your pin: ");
 			String actualPin = scanner.next();
 			for(int counter = 0; counter < accountNumber; counter++){
-				if(accountNo .equals(accountNo.get(counter) && actualPin.equals(pin.get(counter)){
+				if(accountNo .equals(accountNo.get(counter) && actualPin.equals(pin.get(counter)))){
 					
 					System.out.print("Enter your account number: ");
 					personAccountNo .set(scanner.next());
 					System.out.print("How much do you want to transfer:");
-					double amount = scanner.nextInt());
+					double amount = scanner.nextInt();
 					for(int counter = 0; counter < accountNumber.size; counter++){
-						if(personAccountNo .equals(personAccountNo.get(counter)){
+						if(personAccountNo .equals(personAccountNo.get(counter))){
 							double newBalance = amount + balance;
 						}
 					}
@@ -101,18 +101,34 @@ import java.util.ArrayList;
 
 
 			
-		switch void creatingAccount();
-			String creatingAccount = """
-				1 -> System.out.print("deposit");
-					break;
-				2 -> System.out.print("withdraw");
-					break;
-				3 -> System.out.print("balance");
-					break;
-				4 -> System.out.print("transfer");
-					break;
+		public void accountOption(){
+			String ATMOption = """
+				1 -> create account;
+				2 -> deposit money;
+				3 -> withdraw money;
+				4 -> check account balance;
+				5 -> transfer;
+				6 -> change pin;
+					
 			""";
 
-		
+			System.out.print(ATMOption);
+			int options = scanner.next();
+			switch(options){
+				case 1: creatingAccount();
+					break;
+				case2: deposit();
+					break;
+				case3: withdraw();
+					break;
+				case4: balance();
+					break;
+				case5: transfer();
+					break;
+				case6: pin();
+					break;
+			}
 			
-	 }
+		}
+		
+}
