@@ -69,7 +69,7 @@ import java.util.ArrayList;
 			for(int counter = 0; counter < account.size; counter++){
 				if(account .equals(account.get(counter) && oldPin.equals(pin.get(counter)){
 					System.out.print("Enter new pin:"){
-					pin .set(counter,scanner.next());
+					pin .set(scanner.next());
 		
 				}
 			}
