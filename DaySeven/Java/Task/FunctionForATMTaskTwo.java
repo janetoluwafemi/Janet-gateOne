@@ -27,10 +27,10 @@ import java.util.ArrayList;
 		}
 		public void deposit(){
 			System.out.print("Enter the account number: ");
-			String userAccountNumber = scanner.nextInt();
+			String userAccountNumber = scanner.next();
 			System.out.print("How much do you want to deposit: ");
 			double depositAmount = scanner.nextDouble();
-			for(int counter = 0; counter < accountNumber; counter++){
+			for(int counter = 0; counter < accountNumber.size(); counter++){
 				if(accountNumber .equals(accountNumber.get(counter))){ 	
 					balance.set(counter,depositAmount + balance.get(counter));
 				}
@@ -39,37 +39,37 @@ import java.util.ArrayList;
 		}
 		public void withdraw(){
 			System.out.print("Enter the account number: ");
-			String accountNumber = scanner.nextInt();	
+			String accountNumber1 = scanner.next();	
 
 			System.out.print("How much do you want to withdraw: ");
-			double amountWithdrawn = scanner.nextDouble;
-			for(int counter = 0; counter < accountNumber; counter++){
-				if(accountNumber .equals(accountNumber.get(counter))){ 
-					balance.set(counter,amountBalance.get(counter) - amountWithdrawn);
+			double amountWithdrawn = scanner.nextDouble();
+			for(int counter = 0; counter < accountNumber.size(); counter++){
+				if(accountNumber1 .equals(accountNumber.get(counter))){ 
+					balance.set(counter,balance.get(counter) - amountWithdrawn);
 				}
 			}
 		}
 		public void balance(){
 			System.out.print("Enter your account number: ");
 			String accountNo = scanner.next();
-			for(int counter = 0; counter < accountNumber; counter++){
+			for(int counter = 0; counter < accountNumber.size(); counter++){
 				if(accountNo .equals(accountNumber.get(counter))){ 
 					System.out.print(firstName.get(counter));
 					System.out.print(lastName.get(counter));
-					System.out.print(accaountNo.get(counter));
+					System.out.print(accountNo);
 					System.out.print(balance.get(counter));
 				}
 			}
 		}
 		public void pin(){
-			System.out.print("Enter your account number:");
+  			System.out.print("Enter your account number:");
 			String account = scanner.next();
 			System.out.print("Enter your old pin: ");
 			String oldPin = scanner.next();
-			for(int counter = 0; counter < account.size; counter++){
-				if(account .equals(account.get(counter)) && oldPin.equals(pin.get(counter))){
+			for(int counter = 0; counter < accountNumber.size(); counter++){
+				if(account .equals(account) && oldPin.equals(pin)){
 					System.out.print("Enter new pin:");
-					pin .set(scanner.next());
+					String newPin = scanner.next();
 		
 				}
 			}
@@ -82,18 +82,20 @@ import java.util.ArrayList;
 			String accountNo = scanner.next();
 			System.out.print("Enter your pin: ");
 			String actualPin = scanner.next();
-			for(int counter = 0; counter < accountNumber; counter++){
-				if(accountNo .equals(accountNo.get(counter) && actualPin.equals(pin.get(counter)))){
+			
+			for(int counter = 0; counter < accountNumber.size(); counter++){
+				if(accountNo .equals(accountNo) && actualPin.equals(pin)){
 					
 					System.out.print("Enter your account number: ");
-					personAccountNo .set(scanner.next());
+					String personAccountNo = scanner.next();
+					//personAccountNo .set(scanner.next());
 					System.out.print("How much do you want to transfer:");
 					double amount = scanner.nextInt();
-					for(int counter = 0; counter < accountNumber.size; counter++){
-						if(personAccountNo .equals(personAccountNo.get(counter))){
-							double newBalance = amount + balance;
+					for(int count = 0; count < accountNumber.size(); count++){
+						if(personAccountNo .equals(personAccountNo)){
+							balance.set(counter,amount + balance.get(counter));
 						}
-					}
+					} 
 				}
 			}
 			
@@ -113,19 +115,19 @@ import java.util.ArrayList;
 			""";
 
 			System.out.print(ATMOption);
-			int options = scanner.next();
+			int options = scanner.nextInt();
 			switch(options){
 				case 1: creatingAccount();
 					break;
-				case2: deposit();
+				case 2: deposit();
 					break;
-				case3: withdraw();
+				case 3 : withdraw();
 					break;
-				case4: balance();
+				case 4 : balance();
 					break;
-				case5: transfer();
+				case 5 : transfer();
 					break;
-				case6: pin();
+				case 6 : pin();
 					break;
 			}
 			
