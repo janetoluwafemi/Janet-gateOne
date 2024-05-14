@@ -4,12 +4,10 @@ import java.util.ArrayList;
 		private Scanner scanner = new Scanner(System.in);
 		ArrayList<String> firstName = new <String>ArrayList();
 		ArrayList<String> lastName = new <String>ArrayList();
-		ArrayList<Integer> pin = new <Integer>ArrayList();
+		ArrayList<String> pin = new <String >ArrayList();
 		ArrayList<String> accountNumber = new <String>ArrayList();
 		ArrayList<Double> balance = new <Double>ArrayList();
- 		String accountNumber = "";
-		double balance = 0.0;
-		int pin = 0;
+ 	
 		
 		public void creatingAccount(){
 			System.out.print("Enter first name: ");
@@ -22,7 +20,7 @@ import java.util.ArrayList;
 			accountNumber.add(scanner.next());
 
 			System.out.print("Enter your pin: ");
-			pin.add(scanner.nextInteger());
+			pin.add(scanner.next());
 
 			balance.add(0.0);
 
@@ -62,12 +60,40 @@ import java.util.ArrayList;
 					System.out.print(balance.get(counter));
 				}
 			}
-		}
-	
 		
+		public void pin(){
+			System.out.print("Enter your account number:");
+			String account = scanner.next();
+			System.out.print("Enter your old pin: ");
+			String oldPin = scanner.next();
+			for(int counter = 0; counter < account.size; counter++){
+				if(account .equals(account.get(counter) && oldPin.equals(pin.get(counter)){
+					System.out.print("Enter new pin:"){
+					pin .set(scanner.next());
+		
+				}
+			}
+
 			
 
-		
-		
+		}
+		public void transfer(){
+			System.out.print("Enter account number: ");
+			String accountNo = scanner.next();
+			System.out.print("Enter your pin: ");
+			String actualPin = scanner.next();
+			for(int counter = 0; counter < accountNumber; counter++){
+				if(accountNo .equals(accountNo.get(counter) && actualPin.equals(pin.get(counter)){
+					
+					System.out.print("Enter your pin: ");
+					pin .set(scanner.next());
+					System.out.print("How much do you want to transfer:");
+					int amount .add(scanner.nextInt());
+					amount = 
+				}
+			}
+
+			
+	
 			
 	 }
