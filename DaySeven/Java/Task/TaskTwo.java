@@ -78,6 +78,7 @@ import java.util.Scanner;
 				double balance = checkBalance - amount;
 	
 				return balance;
+			//still thinking
 
 			
 		}
