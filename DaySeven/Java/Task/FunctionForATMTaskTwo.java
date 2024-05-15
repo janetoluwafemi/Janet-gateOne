@@ -23,6 +23,7 @@ import java.util.ArrayList;
 			pin.add(scanner.next());
 
 			balance.add(0.0);
+			System.out.print(
 
 		}
 		public void deposit(){
