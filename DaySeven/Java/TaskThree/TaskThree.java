@@ -68,6 +68,7 @@ import java.util.Scanner;
 					
 				}
 			}
+			
 			System.out.print("Do you want to continue: ");
 			String reply = scanner.next();
 			if(reply.equals("yes")){
