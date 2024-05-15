@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 	public class TaskThree{
 		ArrayList<String> firstName = new <String>ArrayList();
 		ArrayList<String> lastName = new <String>ArrayList();
 		ArrayList<String> phoneNumber = new <String>ArrayList();
-		public void addContact{
+
+		public void addContact(){
 			System.out.print("Enter first name: ");
 			firstName .add(scanner.next);
 			System.out.print("Enter last name: ");
@@ -13,11 +15,11 @@ import java.util.Scanner;
 		
 			
 		}
-		public void removeContact{
+		public void removeContact(){
 			System.out.print("Enter your phone number: ");
 			String personPhoneNumber = scanner.next;
 			for(int counter = 0; counter < phoneNumber.size(); counter++){
-				if(phoneNumber .equals(personPhoneNumber)){
+				if(phoneNumber.get(counter).equals(personPhoneNumber)){
 					phoneNumber .remove(scanner.next);
 					firstName .remove(scanner.next);
 					lastName .remove(scanner.next);
@@ -25,43 +27,88 @@ import java.util.Scanner;
 			}
 		}
 
-		public void findContactByPhoneNumber{
+		public void findContactByPhoneNumber(){
 			System.out.print("Enter phone number: ");
 			String number = scanner.next();
-			for(int counter = 0; counter < phoneNumber.size(); counter+=){
-				if(number .equals(phoneNumber)){
-					System.out.print(number);
+			 for(int counter = 0; counter < phoneNumber.size(); counter++){
+				if(number .equals(phoneNumber.get(counter))){
+					System.out.print(firstName.get(counter));
+					System.out.print(lastName.get(counter));
+					System.out.print(phoneNumber.get(counter));
 				}
 			}
 		}
 			
-		public void findContactByFirstName{
+		public void findContactByFirstName(){
 			System.out.print("Enter first name: ");
 			firstName .add(scanner.next);
 			for(int counter = 0; counter < phoneNumber.size(); counter++){
 				System.out.print("Enter phone number: ");
 				String phoneNo = scanner.next();
-				if(phoneNo .equals(phoneNumber)){
-																				phoneNumber .set(scanner.next);
-					System.ouut.print(firstName);
+				if(phoneNo .equals(phoneNumber.get(counter))){
+					System.out.print(firstName.get(counter));
+					System.out.print(lastName.get(counter));
+					System.out.print(phoneNumber.get(counter));
 					
 				}
 			}
 		}
 
-		public void findContactByLastName{
+		public void findContactByLastName(){
 			System.out.print("Enter last name: ");
 			lastName .add(scanner.next);
 			for(int counter = 0; counter < phoneNumber.size(); counter++){
 				System.out.print("Enter phone number: ");
 				String phoneNo = scanner.next();
 				if(phoneNo .equals(phoneNumber)){
-																				phoneNumber .set(scanner.next);
-					System.ouut.print(lastName);
+					System.out.print(firstName.get(counter));
+					System.out.print(lastName.get(counter));
+					System.out.print(phoneNumber.get(counter));
 					
 				}
 			}
 		}
+		//public void editContact(){
+		//	System.out.print("Enter first name: ");
+		//	String newFirstName = scanner.next;
+		//	System.out.print("Enter last name: ");
+		//	String newLastName = scanner.next;
+		//	System.out.print("Enter your phone number: ");
+		//	String phoneContact = scanner.next;
+		//	for(int counter = 0; counter < phoneNumber.size(); counter++){
+		//		if(phoneContact .equals(phoneNumber)){
+		//			System.out.print(phoneNumber);
+		//		}
+		//	}
+		//}
+
+		public void phoneOption()           {
+			String contactOption = """ 
+				1 -> Add contact
+				2 -> Remove contact
+				3 -> Find contact by phone number
+				4 -> Find contact by first name
+				5 -> Find contact by last name
+				6 -> Edit contact
+			"""; 
+			System.out.print(contactOption);
+			int options = scanner.nextInt();
+			switch(options){
+				case 1: addContact(); 
+					break;
+				case 2: removeContact();
+					break;
+				case 3: findContactByPhoneNumber();
+					break;
+				case 4: findContactByFirstName();
+					break;
+				case 5: findContactByLastName();
+					break;
+				case 6: editContact();
+					break;
+			}
+
+		}  		
 	}
 		
 
