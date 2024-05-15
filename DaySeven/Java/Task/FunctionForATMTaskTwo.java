@@ -23,7 +23,14 @@ import java.util.ArrayList;
 			pin.add(scanner.next());
 
 			balance.add(0.0);
-			System.out.print(
+			System.out.println("Loading...");
+			System.out.println("Account Saved Successfully");
+			System.out.println("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				accountOption();
+			}
+
 
 		}
 		public void deposit(){
@@ -36,7 +43,12 @@ import java.util.ArrayList;
 					balance.set(counter,depositAmount + balance.get(counter));
 				}
 			}
-			
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				accountOption();
+			}
+
 		}
 		public void withdraw(){
 			System.out.print("Enter the account number: ");
@@ -49,6 +61,12 @@ import java.util.ArrayList;
 					balance.set(counter,balance.get(counter) - amountWithdrawn);
 				}
 			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				accountOption();
+			}
+
 		}
 		public void balance(){
 			System.out.print("Enter your account number: ");
@@ -61,6 +79,12 @@ import java.util.ArrayList;
 					System.out.print(balance.get(counter));
 				}
 			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				accountOption();
+			}
+
 		}
 		public void pin(){
   			System.out.print("Enter your account number:");
@@ -74,8 +98,12 @@ import java.util.ArrayList;
 		
 				}
 			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				accountOption();
+			}
 
-			
 
 		}
 		public void transfer(){
@@ -99,11 +127,14 @@ import java.util.ArrayList;
 					} 
 				}
 			}
-			
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				accountOption();
+			}
+
 		}
-
-
-			
+	
 		public void accountOption(){
 			String ATMOption = """
 				1 -> create account;
@@ -117,7 +148,7 @@ import java.util.ArrayList;
 
 			System.out.print(ATMOption);
 			int options = scanner.nextInt();
-			switch(options){
+ 			switch(options){
 				case 1: creatingAccount();
 					break;
 				case 2: deposit();

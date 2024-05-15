@@ -14,7 +14,11 @@ import java.util.Scanner;
 			lastName .add(scanner.next());
 			System.out.print("Enter your phone number: ");
 			phoneNumber .add(scanner.next());
-		
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				phoneOption();
+			}
 			
 		}
 		public void removeContact(){
@@ -22,10 +26,15 @@ import java.util.Scanner;
 			String personPhoneNumber = scanner.next();
 			for(int counter = 0; counter < phoneNumber.size(); counter++){
 				if(phoneNumber.get(counter).equals(personPhoneNumber)){
-					phoneNumber .remove(scanner.next());
-					firstName .remove(scanner.next());
-					lastName .remove(scanner.next());
+					phoneNumber.remove(scanner.next());
+					firstName.remove(scanner.next());
+					lastName.remove(scanner.next());
 				}
+			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				phoneOption();
 			}
 		}
 
@@ -38,6 +47,11 @@ import java.util.Scanner;
 					System.out.print(lastName.get(counter));
 					System.out.print(phoneNumber.get(counter));
 				}
+			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				phoneOption();
 			}
 		}
 			
@@ -54,6 +68,11 @@ import java.util.Scanner;
 					
 				}
 			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				phoneOption();
+			}
 		}
 
 		public void findContactByLastName(){
@@ -69,6 +88,11 @@ import java.util.Scanner;
 					
 				}
 			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				phoneOption();
+			}
 		}
 		public void editContact(){
 			System.out.print("Enter your phone number: ");
@@ -83,6 +107,11 @@ import java.util.Scanner;
 					phoneNumber.set(counter, scanner.next());
 					
 				}
+			}
+			System.out.print("Do you want to continue: ");
+			String reply = scanner.next();
+			if(reply.equals("yes")){
+				phoneOption();
 			}
 		}
 
