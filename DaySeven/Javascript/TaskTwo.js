@@ -1,116 +1,88 @@
 const prompt = require("prompt-sync")();
+let contactList = []
+
 function creatingContact(){
-	let createContact = [];
+	let contact = [];
 	let firstName = prompt("Enter first name: ");
 	let lastName = prompt("Enter last name: ");
 	let phoneNumber = prompt("Enter your phone number: ");
-
-	reply = prompt("Do you want to continue: ");
-	if(reply.equals("yes")){
-		phoneOption();
-			
-	}
+	contact.push(firstName);
+	contact.push(lastName);
+	contact.push(phoneNumber)
+	contactList.push(contact);
+	console.log("Contact added successfully");
+	console.log(contactList);
 }
 function removeOfContact(){
 	let removeContact = [];
 	let personPhoneNumber = prompt("Enter your phone number: ");
-	for(int counter = 0; counter < phoneNumber.size(); counter++){
-		if(phoneNumber.get(counter).equals(personPhoneNumber)){
+	for(let counter = 0; counter < contactList.length(); counter++){
+		if(contactList[counter][2] === personPhoneNumber){
 			phoneNumber.remove(scanner.next());
 			firstName.remove(scanner.next());
 			lastName.remove(scanner.next());
 		}
 	}
+	
 
-	reply = prompt("Do you want to continue: ");
-	if(reply.equals("yes")){
-	 	phoneOption();
-	}
 }
 
 
-functilet on findingContactByPhoneNumber(){
-	let findContactByPhoneNumber = [];
-	number = prompt("Enter phone number: ");
-	for(int counter = 0; counter < phoneNumber.size(); counter++){
-		if(number .equals(phoneNumber.get(counter))){
-			console.log(firstName.get(counter));
-			console.log(lastName.get(counter));
-			console.log(phoneNumber.get(counter));
-		}
+function findContactByPhoneNumber(){
+	let phoneNo = prompt("Enter phone number: ");
+	for(let counter = 0; counter < contactList.length; counter++){
+		if(contactList[counter][2] === phoneNo){
+			console.log(contactList[counter]);
+		}	
 	}
-	reply = prompt("Do you want to continue: ");
-	if(reply.equals("yes")){
-		phoneOption();
-	}
+	
 }
 		
 function findingContactByFirstName(){	
-	let findContactByFirstName();
-	let firstName = prompt("Enter first name: ");
-	for(int counter = 0; counter < phoneNumber.size(); counter++){
+	let firstName = prompt("Enter  first name: ");
+	for(let counter = 0; counter < contactList.length(); counter++){
 		phoneNo = prompt("Enter phone number: ");
-		if(phoneNo .equals(phoneNumber.get(counter))){
-			console.log(firstName.get(counter));
-			console.log(lastName.get(counter));
-			console.log(phoneNumber.get(counter));
+		if(contactList[counter][0] === firstName){
+			console.log(contactList[counter]);
 					
 		}
 	}
 			
-
-	reply = prompt("Do you want to continue: ");
-	if(reply.equals("yes")){
-		phoneOption();
-	}
 }
 
 
-fuction findContactByLastName(){
-	let lastNamw = prompt("Enter last name: ");
-	for(int counter = 0; counter < phoneNumber.size(); counter++){
-		phoneNo = prompt("Enter phone number: "){
-		if(phoneNo .equals(phoneNumber.get(counter))){
-			console.log(firstName.get(counter));
-			console.log(lastName.get(counter));
-			console.log(phoneNumber.get(counter));
+function findContactByLastName(){
+	let lastName = prompt("Enter last name: ");
+	for(let counter = 0; counter < contactList.length(); counter++){
+		phoneNo = prompt("Enter phone number: ");
+		if(contactList[counter][1] === lastName){
+			console.log(contactList[counter]);
 					
 		}
-	}
-	reply = prompt("Do you want to continue: ");
-	if(reply.equals("yes")){
-		phoneOption();
 	}
 }
 function editContact(){
 	let phoneContact = prompt("Enter your phone number: ");
-			for(int counter = 0; counter < phoneNumber.size(); counter++){
-				if(phoneContact .equals(phoneNumber.get(counter))){
+			for(let counter = 0; counter < contactList.length(); counter++){
+				if(contactList[counter][2] === phoneContact){
 					let firstName = prompt  ("Enter your first name: ");
 					let lastName = prompt("Enter your last name: ");
 					let phoneNumber = prompt("Enter your phone number: ");
 					
 				}
 			}
-			reply = prompt("Do you want to continue: ");
-			if(reply.equals("yes")){
-				phoneOption();
-			}
-		}
+	
 
-		public void phoneOption(){
-			let contactOption = """ 
-				1 -> Add contact
-				2 -> Remove contact
-				3 -> Find contact by phone number
-				4 -> Find contact by first name
-				5 -> Find contact by last name
-				6 -> Edit contact
-			"""; 
-			console.log(contactOption);
-			let options = prompt("Pick an option");
+		}
+		
+		let loopCondition = true;
+		
+		while(loopCondition){
+		console.log(" 1-> Add contact\n2 -> Remove contact\n3 -> Find contact by phone number\n4 -> Find contact by first name\n5 -> Find contact by last name\n6 -> Edit contact\n7-> Exit"); 
+			//console.log(contactOption);
+			let options = parseInt(prompt("Pick an option"));
 			switch(options){
-				case 1: addContact(); 
+				case 1: creatingContact(); 
 					break;
 				case 2: removeContact();
 					break;
@@ -122,10 +94,13 @@ function editContact(){
 					break;
 				case 6: editContact();
 					break;
+				case 7: loopCondition = false;
+					break;
+				default: console.log("Enter valid option");
 			}
-
-		}  		
-	}
+		}
+	 		
+	
 		
 
 		
